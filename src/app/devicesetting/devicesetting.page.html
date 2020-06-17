@@ -1,0 +1,20 @@
+<app-headerpanel title ="New Device"></app-headerpanel>
+
+<ion-content>
+
+  <app-barcode-scanner></app-barcode-scanner>
+
+  <ion-list lines="none">
+
+    <ion-item slot="start">
+    <ion-label align="center"> (or) </ion-label>
+    </ion-item>
+    
+    <ion-item slot="end" lines ="none">
+    <div align="center">
+    <ion-input placeholder="Enter DeviceID" type="text" value=""></ion-input>
+    </div>
+  </ion-item>
+  
+  </ion-list>
+</ion-content>

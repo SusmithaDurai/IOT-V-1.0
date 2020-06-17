@@ -1,0 +1,56 @@
+<app-headerpanel title="Switch Setup"></app-headerpanel>
+
+<ion-content fullscreen>
+<ion-list lines="none">
+  <div>
+<ion-item>
+  <ion-input placeholder="Name"></ion-input>
+
+</ion-item>
+</div>
+<div>
+<ion-item>
+    <ion-label>Type</ion-label>
+    <ion-select interface="popover">
+      <ion-select-option value="light">Light</ion-select-option>
+      <ion-select-option value="fan">Fan</ion-select-option>
+      <ion-select-option value="switch">Switch</ion-select-option>
+      <ion-select-option value="others">Others</ion-select-option>
+    </ion-select>
+</ion-item>
+</div>
+<ion-item >
+  <ion-router-link href="#" >Link Sensor</ion-router-link>
+</ion-item>
+</ion-list>
+
+<ion-item lines="none">
+  <ion-icon name="alarm-outline" slot="start"></ion-icon>
+  <ion-label>Scheduled</ion-label>
+  <ion-toggle slot="end" checked></ion-toggle>
+</ion-item>
+
+
+<ion-list lines>
+        <ion-item>
+          <ion-label>Start Date</ion-label>
+          <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Start Time</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Ends</ion-label>
+          <ion-datetime value="1990-02-20" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+     
+        <ion-item>
+          <ion-label>Repeat</ion-label>
+          <ion-datetime placeholder="Never" disabled></ion-datetime>
+        </ion-item>
+      
+      </ion-list>
+</ion-content>
