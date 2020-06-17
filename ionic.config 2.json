@@ -1,7 +1,0 @@
-{
-  "name": "iot",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
