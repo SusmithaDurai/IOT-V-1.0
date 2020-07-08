@@ -1,0 +1,29 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-iot-dev-220252-authRole",
+            "UnauthRoleArn": "arn:aws:iam::887286342473:role/amplify-iot-dev-220252-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::887286342473:role/amplify-iot-dev-220252-authRole",
+            "Region": "ap-south-1",
+            "DeploymentBucketName": "amplify-iot-dev-220252-deployment",
+            "UnauthRoleName": "amplify-iot-dev-220252-unauthRole",
+            "StackName": "amplify-iot-dev-220252",
+            "StackId": "arn:aws:cloudformation:ap-south-1:887286342473:stack/amplify-iot-dev-220252/73e939c0-b7f0-11ea-873a-0aac1af93896",
+            "AmplifyAppId": "d2ehg3t33kk7pf"
+        },
+        "categories": {
+            "auth": {
+                "iot618f30f4": {
+                    "hostedUIProviderCreds": "[]"
+                }
+            },
+            "function": {
+                "iot618f30f4DefineAuthChallenge": {},
+                "iot618f30f4CreateAuthChallenge": {},
+                "iot618f30f4VerifyAuthChallengeResponse": {
+                    "RECAPTCHASECRET": ""
+                }
+            }
+        }
+    }
+}

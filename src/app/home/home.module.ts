@@ -1,5 +1,7 @@
+import { DevicesetupPageModule } from './../devicesetup/devicesetup.module';
+import { RouterModule } from '@angular/router';
 import { DashboardPageModule } from './../dashboard/dashboard.module';
-import { ComponentsModule } from '../utils/utils.module';
+import { ComponentsModule } from '../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,9 +18,12 @@ import { HomePage } from './home.page';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    ComponentsModule,
-    DashboardPageModule
+    // ComponentsModule,
+    // DevicesetupPageModule,
+    // RouterModule,
+    // DashboardPageModule
   ],
+  exports:[HomePageRoutingModule],
   declarations: [HomePage]
 })
 export class HomePageModule {}

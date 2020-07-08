@@ -1,21 +1,30 @@
-import { ComponentsModule } from '../utils/utils.module';
+import { RouterModule, Routes } from '@angular/router';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DevicesettingPageRoutingModule } from './devicesetting-routing.module';
 
 import { DevicesettingPage } from './devicesetting.page';
+import { ComponentsModule } from '../components/components.module';
+
+
+const routes: Routes = [
+  {
+    path: '',
+    component: DevicesettingPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DevicesettingPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule.forChild(routes)
   ],
   declarations: [DevicesettingPage]
 })
