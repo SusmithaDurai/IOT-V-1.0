@@ -1,0 +1,9 @@
+{
+    "device_id" : "MBNASDFH82634",
+    "device_config" : [
+          {"name" : "AirConditioner",  "timing" : [1,5,10,30]},
+          {"name" : "Light",  "timing" : [18,5,10,30]},
+          {"name" : "Fan",  "timing" : [18,5,10,30]},
+          {"name" : "Light",  "timing" : [18,5,10,30]}
+    ]
+ }

@@ -1,0 +1,32 @@
+{
+    "devices" : [
+        {"device_id" : "MBNASDFH82634","groupID" : "Living Room", "type" : "Relays-4,TEMPERATURE,HUMIDITY",
+            "device_config" : [
+                {"name" : "Device1",  "timing" : [0,0,0,0]},
+                    {"name" : "Device2",  "timing" : [0,0,0,0]},
+                    {"name" : "Device3",  "timing" : [0,0,0,0]},
+                    {"name" : "Device4",  "timing" : [0,0,0,0]}
+              ]},
+            {"device_id" : "90ASDBASDF94D", "groupID" : "Bed Room","type" : "Relays-2,LIGHT",
+                "device_config" : [
+                        {"name" : "Device1",  "timing" : [0,0,0,0]},
+                        {"name" : "Device2",  "timing" : [0,0,0,0]},
+                        {"name" : "Device3",  "timing" : [0,0,0,0]},
+                        {"name" : "Device4",  "timing" : [0,0,0,0]}
+                  ]},
+            {"device_id" : "AB89ASDFKDF33", "groupID" : "Main Hall","type" : "Relays-4",
+                "device_config" : [
+                    {"name" : "Device1",  "timing" : [0,0,0,0]},
+                        {"name" : "Device2",  "timing" : [0,0,0,0]},
+                        {"name" : "Device3",  "timing" : [0,0,0,0]},
+                        {"name" : "Device4",  "timing" : [0,0,0,0]}
+                  ]},
+            {"device_id" : "BCD8700X8D43B", "groupID" : "Kitchen","type" : "Relays-0,GAS,SMOKE",
+                "device_config" : [
+                    {"name" : "Device1",  "timing" : [0,0,0,0]},
+                        {"name" : "Device2",  "timing" : [0,0,0,0]},
+                        {"name" : "Device3",  "timing" : [0,0,0,0]},
+                        {"name" : "Device4",  "timing" : [0,0,0,0]}
+                  ]}
+       ]
+}

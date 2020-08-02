@@ -1,14 +1,15 @@
 import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component';
-import { AdddevicebtnComponent } from './adddevicebtn/adddevicebtn.component';
+import { AddDeviceBtnComponent } from './add-device-btn/add-device-btn.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderpanelComponent } from './headerpanel/header-panel.component';
+import { HeaderPanelComponent } from './header-panel/header-panel.component';
+import { DeviceBlockPanelComponent } from './device-block-panel/device-block-panel.component';
 
 
 
 @NgModule({
-  declarations: [AdddevicebtnComponent,BarcodeScannerComponent,HeaderpanelComponent],
-  exports : [AdddevicebtnComponent,BarcodeScannerComponent,HeaderpanelComponent],
+  declarations: [AddDeviceBtnComponent,BarcodeScannerComponent,HeaderPanelComponent,DeviceBlockPanelComponent],
+  exports : [AddDeviceBtnComponent,BarcodeScannerComponent,HeaderPanelComponent,DeviceBlockPanelComponent],
   imports: [
     CommonModule,
     

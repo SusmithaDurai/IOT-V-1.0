@@ -1,4 +1,4 @@
-import { WelcomeComponent } from './Auth/welcome/welcome.component';
+import { WelcomeComponent } from './auth/welcome/welcome.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
@@ -14,9 +14,10 @@ import { AppComponent } from './app.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from 'src/aws-exports';
-import { CognitoService } from './providers/cognito.service';
+import { CognitoService } from './providers/cognito-service';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import { DatePipe } from '@angular/common';
 
 Amplify.configure(awsconfig);
 
@@ -34,6 +35,7 @@ Amplify.configure(awsconfig);
     StatusBar,
     SplashScreen,
     CognitoService,
+    DatePipe,
     CookieService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

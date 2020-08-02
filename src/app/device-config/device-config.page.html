@@ -1,121 +1,98 @@
-<app-headerpanel title="New Device"></app-headerpanel>
+<app-headerpanel title="Rooms"></app-headerpanel>
+<!-- <ion-header>
+  <ion-toolbar color="secondary" >
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+  </ion-header> -->
+
 
 <ion-content>
-  <ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
+
+  <ion-segment scrollable (ionChange)="selectedDevice($event)" [(ngModel)]="deviceId">
+    <ion-segment-button *ngFor="let items of devices" value="{{items.device_id}}">
+      <ion-label>{{items.groupID}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- <ion-toolbar> -->
+  <!-- <ion-segment></ion-segment>
+  <ion-segment  *ngFor="let items of devices">
+    <ion-label>{{items.device_id}}</ion-label>
+    
+      
+   
+  </ion-segment> -->
+  <!-- <ion-chip *ngFor="let items of devices">
+  <ion-label value="{{items.device_id}}">{{items.device_id}}</ion-label>
+
+</ion-chip>  -->
+
+  <!-- </ion-toolbar> -->
+
+
+  <!-- <ion-item>
+    <ion-label>Select a device</ion-label>
+<ion-select interface="popover" [(ngModel)]="deviceId" (ionChange)="selectedDevice()">
+<ng-container *ngFor="let item of devices">
+  <ion-select-option  value="{{item.device_id}}">{{item.device_id}}</ion-select-option>
+</ng-container>
+</ion-select>
+</ion-item>-->
+  <!-- <ion-list *ngIf="showDevices">
+  <ion-item button lines="none"  *ngFor="let items of deviceConfigurations;let i=index " (click)="switchSetup(items.name)">
+    <ion-thumbnail slot="start">  
       <img src="/assets/icon/smartswitch.jpeg">
     </ion-thumbnail>
+
     <ion-label>
+      <ion-text color="dark">
+        <h3>{{items.name}}</h3>
+      </ion-text>
+      </ion-label>
+  </ion-item> 
+</ion-list>  -->
 
-    <ion-text color="dark">
-      <h3>4 Switch Module</h3>
-    </ion-text>
-    <ion-text color="dark">
-      <p>ID AX123456789</p>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
 
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
+  <ion-grid *ngIf="showDevices">
+    <ion-row>
+      <ion-col size="6" *ngFor="let items of deviceConfigurations;let i=index " (click)="switchSetup(items.name)">
 
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    <ion-text color="dark">
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
 
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
+        <ion-grid style="border: 5px solid rgb(246, 248, 248);border-radius: 25px;">
+          <ion-row style="padding-bottom:0px;">
+            <ion-img src="assets/icon/lightBulb.png" style="width:25%;height:50px;"></ion-img>
+          </ion-row>
+          <ion-row style="padding-left:0px;">
+            <ion-card-header style="padding-left:0px;padding-top:0px;padding-bottom:0px;">
+              <ion-card-title style="font-family: Arial, Helvetica, sans-serif;font-size:14px;font-size:small;font-weight:bold;">{{items.name}}</ion-card-title>
 
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
+            </ion-card-header>
+            <ion-toggle slot="end" style="width:100px;"></ion-toggle>
 
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
+          </ion-row>
+        </ion-grid>
 
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
+      </ion-col>
 
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
 
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
+      <!-- <ion-col size="6">
+        <ion-grid>
+          <ion-row>
+            <ion-img src="assets/icon/greenButton.png"></ion-img>
+          </ion-row>
+          <ion-row>
+            <ion-card-header>
+              <ion-card-title>Madison, WI</ion-card-title>
+              <ion-card-subtitle>Destination</ion-card-subtitle>
 
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
+            </ion-card-header>
+          </ion-row>
+        </ion-grid>
+      </ion-col> -->
 
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
-
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
-
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
-
-<ion-list>
-  <ion-item lines="none">
-    <ion-thumbnail slot="start">
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-    <ion-label>
-
-    <ion-text color="dark">
-      <h3>Tap to setup</h3>
-    </ion-text>
-    </ion-label>
-  </ion-item>
-</ion-list>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

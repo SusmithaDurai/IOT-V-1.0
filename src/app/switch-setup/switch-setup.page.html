@@ -1,0 +1,40 @@
+<app-headerpanel title="Switch Setup"></app-headerpanel>
+
+<ion-content fullscreen>
+
+  <div style="height:40%;">
+    <img src="assets/icon/smartLight.jpg" style="height:100%;width:100%;">
+  </div>
+ 
+  <div>
+    <form class="container" [formGroup]="switchdetails" (ngSubmit)="submitForm()" novalidate>
+      <ion-list lines="none" style="border: 5px solid rgb(246, 248, 248);border-radius: 25px;">
+      <ion-item>
+        <ion-label>Scheduled</ion-label>
+        <ion-toggle slot="end" formControlName="scheduled" style="width:100px;"></ion-toggle>
+      </ion-item>
+
+      
+          <ion-item>
+
+            <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+
+          </ion-item>
+        <ion-item>
+          <ion-label>Start Time</ion-label>
+          <ion-datetime display-format="hh:mm A" picker-format="HH:mm" formControlName="startTime"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>End Time</ion-label>
+          <ion-datetime display-format="hh:mm A" picker-format="HH:mm" value="1990-02-19T07:43Z"
+            formControlName="endTime"></ion-datetime>
+        </ion-item>
+
+      </ion-list>
+     
+      <!-- <ion-button expand="block" color="secondary" type="submit">Submit</ion-button> -->
+
+    </form>
+  </div>
+</ion-content>

@@ -1,8 +1,8 @@
-import { CognitoService } from './../providers/cognito.service';
+import { CognitoService } from '../providers/cognito-service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterStateSnapshot, ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { userInfo } from '../providers/userInfo';
+import { userInfo } from '../providers/user-info';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({

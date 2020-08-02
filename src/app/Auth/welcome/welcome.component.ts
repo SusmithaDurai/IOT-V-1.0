@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CognitoService } from 'src/app/providers/cognito.service';
+import { CognitoService } from 'src/app/providers/cognito-service';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { userInfo } from 'src/app/providers/userInfo';
+import { userInfo } from 'src/app/providers/user-info';
 
 @Component({
   selector: 'app-welcome',
@@ -20,18 +20,20 @@ export class WelcomeComponent implements OnInit {
     private cookie: CookieService,
     private routerurl: Router) {
 
-    const user = this.cookie.get('UserName');
-    if (user) {
-      this.userinfo = { username: user };
-      this.route.navigateByUrl('/home');
-    }
+      const user = this.cookie.get('UserName');
+      if (user) {
+        this.userinfo = { username: user };
+        this.route.navigateByUrl('/home');
+      }
+    
 
   }
 
   ngOnInit() {
     this.router.fragment.subscribe((params) => {
-      console.log('cechking URL params');
+      console.log('Trying to get Token Details...');
       if (params) {
+        this.userinfo = { username: '' };
         const fragments = params.split('&');
         const paramsMap = {};
         fragments.forEach((fragment) => {
@@ -39,18 +41,18 @@ export class WelcomeComponent implements OnInit {
           paramsMap[keyValue[0]] = keyValue[1];
 
         });
-        let id_token = paramsMap["id_token"];
+        let id_token = paramsMap["id_token"]; // FIXME:: Use destructuring
         this.cogservice.setData(paramsMap);
       }
     });
 
-    //console.log(this.cogservice.paramTokens);
+    console.log(this.cogservice.paramTokens);
     if (this.cogservice.paramTokens) {
       this.cogservice.getUserInfo().subscribe(
         data => {
 
           this.userinfo = data;
-          console.log(this.userinfo.username);
+          //console.log(this.userinfo.username);
           this.cookie.set('UserName', this.userinfo.username);
           this.cookie.set('Email', this.userinfo.email);
           this.routerurl.navigate(['/home']);
@@ -66,7 +68,7 @@ export class WelcomeComponent implements OnInit {
 
 
   login() {
-    console.log("clicked");
+    this.userinfo={username:''};
     const URL = "https://iotapp.auth.ap-south-1.amazoncognito.com/login?response_type=token&client_id=26p5uscia4d1pq3ahulnp146mu&redirect_uri=http://localhost:8100";
     window.location.assign(URL);
   }

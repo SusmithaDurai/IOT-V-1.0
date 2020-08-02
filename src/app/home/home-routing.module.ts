@@ -1,34 +1,40 @@
-import { DevicesettingPage } from './../devicesetting/devicesetting.page';
+import { DeviceSetUpPage } from './../device-setup/device-setup.page';
+import { DashboardPage } from './../dashboard/dashboard.page';
+import { DeviceConfigPage } from './../device-config/device-config.page';
+import { DeviceSettingPage } from '../device-setting/device-setting.page';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { DevicesetupPage } from '../devicesetup/devicesetup.page';
+import { SwitchsetupPage } from '../switch-setup/switch-setup.page';
 
 const routes: Routes = [
 
   {
-    path:'devicesetup',
+    path:'',      
     children: [
       {
         path: '',
-        loadChildren: () => import('../devicesetup/devicesetup.module').then(m => m.DevicesetupPageModule),
+        component:DeviceSetUpPage,
+        loadChildren: () => import('../device-setup/device-setup.module').then(m => m.DeviceSetUpPageModule),
       }
     ]
 
   },
   {
-    path:'devicesetting',
+    path:'device-setting',
+    //component:DeviceConfigPage,
     children: [
       {
         path: '',
-        loadChildren: () => import('../devicesetting/devicesetting.module').then(m => m.DevicesettingPageModule),
+        loadChildren: () => import('../device-setting/device-setting.module').then(m => m.DeviceSettingPageModule),
       }
     ]
 
   },
   {
     path:'dashboard',
+    component:DashboardPage,
     children: [
       {
         path: '',
@@ -37,12 +43,35 @@ const routes: Routes = [
     ]
 
   },
-
   {
-    path: '',
-    redirectTo: '/home/devicesetup',
-    pathMatch: 'full'
+    path:'device-setup',
+    component:DeviceSetUpPage,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../device-setup/device-setup.module').then(m => m.DeviceSetUpPageModule),
+      }
+    ]
+
   }
+  //,
+  // {
+  //   path:'switch-setup',
+  //   component:SwitchsetupPage,
+  //   children: [
+  //     {
+  //       path: '',
+  //       loadChildren: () => import('../switch-setup/switch-setup.module').then(m => m.SwitchsetupPageModule),
+  //     }
+  //   ]
+
+  // }
+ 
+  // {
+  //   path: '',
+  //   redirectTo: '/home/device-setup',
+  //   pathMatch: 'full'
+  // }
 ];
   
 

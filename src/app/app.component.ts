@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { userInfo } from './providers/user-info';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+  userinfo:userInfo;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -25,7 +27,11 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+    const user = this.cookie.get('UserName');
+    if (user) {
+      this.userinfo = { username: user };
+      this.router.navigateByUrl('/home');
+    }
   }
 
   initializeApp() {
