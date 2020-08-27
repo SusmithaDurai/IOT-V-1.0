@@ -1,0 +1,34 @@
+{
+    "devices" : [
+        {
+                "device_id" : "MBNASDFH82634",
+                "device_type": "REL4.1",
+                "num_relays" : 4,   
+                "room_type" : "",
+                "room_name" : ""
+        },
+           
+        { "device_id" : "90ASDBASDF94D",
+                "device_type": "REL2.1",
+                "num_relays" : 2,   
+                "room_type" : "",
+                "room_name" : ""
+            },
+               
+            { "device_id" : "AB89ASDFKDF33",
+                "device_type": "REL4.1",
+                "num_relays" : 4,   
+                "room_type" : "Living room",
+                "room_name" : "Living Room"
+            },
+               
+            { 
+                "device_id" : "BCD8700X8D43B",
+                "device_type": "REL0",
+                "num_relays" : 0,   
+                "room_type" : "Hall",
+                "room_name" : "Hall"
+            }
+            
+       ]
+}

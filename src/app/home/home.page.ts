@@ -36,11 +36,13 @@ export class HomePage implements OnInit {
       this.cookie.set('Email',this.userinfo.email);
     });*/
 
-
+    
 
 
   }
-
+  tabClick(){
+    console.log("Tab clicked");
+  }
   
 
 }

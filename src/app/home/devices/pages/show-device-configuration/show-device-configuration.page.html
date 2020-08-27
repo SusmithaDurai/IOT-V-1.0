@@ -1,0 +1,49 @@
+<app-headerpanel title="Configure Device"></app-headerpanel>
+
+<ion-content fullscreen>
+  <div style="height:40%;">
+    <img src="assets/icon/devices/smartLight.jpg" style="height:100%;width:100%;">
+  </div>
+
+  <div>
+    <form class="container" [formGroup]="updateDeviceDetailForm" (ngSubmit)="updateDeviceDetails()" novalidate>
+      <ion-list lines="none" style="border: 0px solid rgb(246, 248, 248);border-radius: 20px;">
+
+        <ion-item>
+          <ion-label>Device Type</ion-label>
+          <ion-select (ionChange)='selectedValue($event)' [value]="currentDevice" formControlName="deviceType">
+            <ion-select-option *ngFor="let device of devices" value={{device}}>
+              {{device}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Device Name" formControlName="deviceName"></ion-input>
+
+        </ion-item>
+        <ion-item>
+          <ion-label>Scheduled</ion-label>
+          <ion-toggle slot="end"  style="width:100px;" formControlName="scheduled"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Start Time</ion-label>
+          <ion-datetime display-format="hh:mm A" picker-format="HH:mm" formControlName="startTime"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>End Time</ion-label>
+          <ion-datetime display-format="hh:mm A" picker-format="HH:mm" formControlName="endTime"></ion-datetime>
+            
+        </ion-item>
+
+        <ion-item>
+          <span style="float:right">
+        <ion-button  type="submit" Fill="outline" size="small">Save</ion-button>
+      </span>
+      </ion-item>
+      </ion-list>
+
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<app-headerpanel title="Configure Room" show="true"></app-headerpanel>
+<!-- <ion-header>
+  <page-header icon="map" title="Map page">
+    <ion-button></ion-button>
+  </page-header>
+</ion-header> -->
+
+<ion-content fullscreen>
+  <div style="height:60%;">
+    <img [class] ='addClasses()' style="height:100%;width:100%;">
+  </div>
+
+  <div>
+    <form class="container" [formGroup]="updateRoomDetailForm" (ngSubmit)="updateRoomDetails()" novalidate>
+      <ion-list lines="none" style="border: 0px solid rgb(246, 248, 248);border-radius: 20px;">
+
+        <ion-item>
+          <ion-label>Room Type</ion-label>
+          <ion-select (ionChange)='selectedValue($event)' [value]="currentRoom" formControlName="roomType">
+            <ion-select-option *ngFor="let room of rooms" value={{room}}>
+              {{room}}
+              
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Room Name" formControlName="roomName"></ion-input>
+
+        </ion-item>
+        <ion-item>
+          <span style="float:right">
+        <ion-button  type="submit" Fill="outline" size="small">Save</ion-button>
+      </span>
+      </ion-item>
+      </ion-list>
+
+    </form>
+  </div>
+</ion-content>

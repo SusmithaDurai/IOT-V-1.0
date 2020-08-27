@@ -10,20 +10,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { DeviceSettingPage } from './device-setting.page';
 import { ComponentsModule } from '../components/components.module';
-import { SwitchsetupPage } from '../switch-setup/switch-setup.page';
 
 
 const routes: Routes = [
   {
-    //path: '',
-    //component: DeviceConfigPage,
-    //children: [         
-      //{
-        path: 'switchsetup',
-        component: SwitchsetupPage
-        //loadChildren: () => import('../device-setting/device-setting.module').then(m => m.DeviceSettingPageModule),
-      },
-      {
+    
         path: '',
         component: DeviceConfigPage
       }
@@ -50,8 +41,8 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DeviceSettingPage, DeviceConfigPage, SwitchsetupPage],
-  exports : [DeviceSettingPage, DeviceConfigPage, SwitchsetupPage]
+  declarations: [DeviceSettingPage, DeviceConfigPage],
+  exports : [DeviceSettingPage, DeviceConfigPage]
 
 })
 export class DeviceSettingPageModule { }

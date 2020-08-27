@@ -1,9 +1,30 @@
 {
-    "device_id" : "MBNASDFH82634",
-    "device_config" : [
-          {"name" : "AirConditioner",  "timing" : [1,5,10,30]},
-          {"name" : "Light",  "timing" : [18,5,10,30]},
-          {"name" : "Fan",  "timing" : [18,5,10,30]},
-          {"name" : "Light",  "timing" : [18,5,10,30]}
+      "device_id" : "MBNASDFH82634",
+      "device_type": "REL4.1",
+      "num_relays" : 4,   
+      "room_type" : "",
+      "room_name" : "",
+      "device_config" : 
+   [
+    	 {
+    	   "name" : "Bed room light", 
+    	   "type" : "Light",
+    	   "schedule" : [18,30,22,0]
+    	 },
+    	 {
+    	   "name" : "Bed room AC", 
+    	   "type" : "AC",
+    	   "schedule" : [11,0,17,0]
+    	 },        
+    	 {
+    	   "name" : "Bed room fan", 
+    	   "type" : "Fan",
+    	   "schedule" : [18,30,6,30]
+    	 },        
+    	 {
+    	   "name" : "Bath room light", 
+    	   "type" : "Light",
+    	   "schedule" : []
+    	 }        
     ]
  }

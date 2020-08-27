@@ -1,3 +1,4 @@
+import { RoutingURLService } from './providers/routing-url.service';
 import { WelcomeComponent } from './auth/welcome/welcome.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,8 @@ import { CognitoService } from './providers/cognito-service';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import { DatePipe } from '@angular/common';
+import {Storage,IonicStorageModule} from '@ionic/storage';
+import { StorageService } from './providers/storage.service';
 
 Amplify.configure(awsconfig);
 
@@ -30,13 +33,15 @@ Amplify.configure(awsconfig);
             IonicModule.forRoot(), 
             AppRoutingModule,
             HttpClientModule,
-            ],
+            IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
     CognitoService,
     DatePipe,
     CookieService,
+    StorageService,
+    RoutingURLService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   exports:[AppRoutingModule],

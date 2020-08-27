@@ -1,11 +1,5 @@
 <app-headerpanel title="Rooms"></app-headerpanel>
-<!-- <ion-header>
-  <ion-toolbar color="secondary" >
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="/home"></ion-back-button>
-  </ion-buttons>
-</ion-toolbar>
-  </ion-header> -->
+
 
 
 <ion-content>
@@ -16,43 +10,7 @@
     </ion-segment-button>
   </ion-segment>
 
-  <!-- <ion-toolbar> -->
-  <!-- <ion-segment></ion-segment>
-  <ion-segment  *ngFor="let items of devices">
-    <ion-label>{{items.device_id}}</ion-label>
-    
-      
-   
-  </ion-segment> -->
-  <!-- <ion-chip *ngFor="let items of devices">
-  <ion-label value="{{items.device_id}}">{{items.device_id}}</ion-label>
-
-</ion-chip>  -->
-
-  <!-- </ion-toolbar> -->
-
-
-  <!-- <ion-item>
-    <ion-label>Select a device</ion-label>
-<ion-select interface="popover" [(ngModel)]="deviceId" (ionChange)="selectedDevice()">
-<ng-container *ngFor="let item of devices">
-  <ion-select-option  value="{{item.device_id}}">{{item.device_id}}</ion-select-option>
-</ng-container>
-</ion-select>
-</ion-item>-->
-  <!-- <ion-list *ngIf="showDevices">
-  <ion-item button lines="none"  *ngFor="let items of deviceConfigurations;let i=index " (click)="switchSetup(items.name)">
-    <ion-thumbnail slot="start">  
-      <img src="/assets/icon/smartswitch.jpeg">
-    </ion-thumbnail>
-
-    <ion-label>
-      <ion-text color="dark">
-        <h3>{{items.name}}</h3>
-      </ion-text>
-      </ion-label>
-  </ion-item> 
-</ion-list>  -->
+  
 
 
   <ion-grid *ngIf="showDevices">
@@ -77,20 +35,6 @@
       </ion-col>
 
 
-      <!-- <ion-col size="6">
-        <ion-grid>
-          <ion-row>
-            <ion-img src="assets/icon/greenButton.png"></ion-img>
-          </ion-row>
-          <ion-row>
-            <ion-card-header>
-              <ion-card-title>Madison, WI</ion-card-title>
-              <ion-card-subtitle>Destination</ion-card-subtitle>
-
-            </ion-card-header>
-          </ion-row>
-        </ion-grid>
-      </ion-col> -->
 
     </ion-row>
   </ion-grid>

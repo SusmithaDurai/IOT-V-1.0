@@ -1,0 +1,10 @@
+<app-headerpanel title="Welcome Home"></app-headerpanel>
+<!-- <ion-header>
+    <ion-buttons slot="start">
+        <ion-back-button text="Back" icon="arrow-back"> </ion-back-button>
+      </ion-buttons>
+<ion-title>sdsdvsdv</ion-title>
+</ion-header> -->
+<ion-content fullscreen="true">
+ <app-create-new-room [listOfRooms]='listOfRooms' (updateRooms)='navigatePage($event)'></app-create-new-room>
+</ion-content>

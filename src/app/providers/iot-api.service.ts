@@ -4,6 +4,8 @@ import { switchInfo } from './switch-info';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { roomData } from '../home/rooms/models/roomData';
+import { deviceData } from '../home/rooms/models/deviceData';
 
 @Injectable({
   providedIn: 'root'
@@ -15,23 +17,41 @@ export class IotApiService {
 
   private _listAllDevices:string="/assets/data/devices.json";
 
-  deviceConfiguration : deviceConfiguration[];
+  private getListOfRooms="/assets/data/rooms.json"
+
+  private saveRoomDetail="http://192.168.1.10/configure/device"
+
+  devicesList : deviceData[];
+  listOfRoomsData : roomData[];
+
   constructor(private http:HttpClient) { }
 
   getDeviceDetails() : Observable<any> {
     return this.http.get(this._url);
   }
 
-  setDeviceConfiguration(deviceconfig:deviceConfiguration[]){
-    this.deviceConfiguration=deviceconfig;
+  setListOfDevicesInRoom(listOfDevicesInRoom:deviceData[]){
+    this.devicesList=listOfDevicesInRoom;
   }
 
-  listAllDevices():Observable<any>{
+  listAllRooms():Observable<any>{
+    return this.http.get(this.getListOfRooms);
+  }
+
+  listAllDevicesInRoom() :Observable<any>{
     return this.http.get(this._listAllDevices);
   }
 
-  getDeviceConfiguration(){
-    return this.deviceConfiguration;
+  getListOfDevicesInRoom(){
+    return this.devicesList;
+  }
+
+  setListOfRoomsData(data : roomData[]) {
+    this.listOfRoomsData=data;
+  }
+
+  getlistOfRoomsData(){
+    return this.listOfRoomsData;
   }
 
   saveSwitchDetails(switchDetails:FormBuilder) : Observable<any> {

@@ -16,6 +16,7 @@ import { deviceConfiguration } from '../providers/deviceConfiguration';
 export class DeviceConfigPage implements OnInit {
  devices:devices[];
  deviceConfigurations : deviceConfiguration[];
+ getDeviceDetailsObserver : any;
 
  showDevices : boolean=false; // FIXME:: No need to do both assignment and types
 
@@ -32,7 +33,7 @@ export class DeviceConfigPage implements OnInit {
     console.log("Calling REST API......");
 
     // FIXME:: any observable should be destroyed properly.
-   this.iotService.getDeviceDetails().subscribe(data=>{
+   this.getDeviceDetailsObserver=this.iotService.getDeviceDetails().subscribe(data=>{
      const {devices}=data;
     this.devices=devices;
 
@@ -51,6 +52,9 @@ export class DeviceConfigPage implements OnInit {
     this.deviceId=this.devices[0].device_id;
     
     }
+  OnDestroy() {
+    this.getDeviceDetailsObserver.unsubscribe();
+    }
 
   getDeviceDetails() {
   //   console.log("Calling REST API......");
@@ -65,27 +69,31 @@ export class DeviceConfigPage implements OnInit {
     
   }
 
-  selectedDevice(items){
+  ngOnDestroy(){
+    this.iotService.deviceConfigurations().subscribe
+  }
 
-    this.showDevices=true;
-    console.log("Selected Device is : ",items.detail.value);
-    this.iotService.deviceConfigurations().subscribe(data=>{
-      const {device_config} = data;
-      this.deviceConfigurations=device_config;
-      this.iotService.setDeviceConfiguration(this.deviceConfigurations);
-     console.log("Device Configurations ",this.deviceConfigurations[0].name);
+  // selectedDevice(items){
 
-    })
+  //   this.showDevices=true;
+  //   console.log("Selected Device is : ",items.detail.value);
+  //   this.iotService.deviceConfigurations().subscribe(data=>{
+  //     const {device_config} = data;
+  //     this.deviceConfigurations=device_config;
+  //     this.iotService.setDeviceConfiguration(this.deviceConfigurations);
+  //    console.log("Device Configurations ",this.deviceConfigurations[0].name);
+
+  //   })
 
 
   }
 
-  switchSetup(deviceName){
-    console.log("Clicked Device ",deviceName);
-    const found=this.deviceConfigurations.find(element=>element.name==deviceName); // FIXME:: give proper name
-    console.log("Array  Device ",found);
-    this.router.navigate(['/home/device-setting/switchsetup'],{queryParams:{deviceName:deviceName}});
+  // switchSetup(deviceName){
+  //   console.log("Clicked Device ",deviceName);
+  //   const found=this.deviceConfigurations.find(element=>element.name==deviceName); // FIXME:: give proper name
+  //   console.log("Array  Device ",found);
+  //   this.router.navigate(['/home/device-setting/switchsetup'],{queryParams:{deviceName:deviceName}});
 
-  }
+  // }
 
-}
+//}

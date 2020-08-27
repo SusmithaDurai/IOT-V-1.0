@@ -1,0 +1,44 @@
+div {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+  }
+
+ion-icon{
+    float: right; 
+  }
+
+ion-card-header{
+    padding-top: 10px;
+    padding-right: 1px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  ion-card-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:small;
+  }
+
+  img{
+    width:100%;
+    height:50%;
+  }
+
+  .livingRoom{
+    content:url("/../../assets/icon/rooms/living_room.jpg");
+
+  }
+  .bedRoom{
+    content:url("/../../assets/icon/rooms/bed_room.jpg");
+  }
+
+  .hallRoom{
+    content:url("/../../assets/icon/rooms/hall_room.jpg");
+  }
+
+  .default{
+    content:url("/../../assets/icon/rooms/smart_home.png");
+  }

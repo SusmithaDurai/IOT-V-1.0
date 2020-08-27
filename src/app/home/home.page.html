@@ -1,9 +1,10 @@
 <ion-content>
-<ion-router-outlet></ion-router-outlet> 
+<!-- <ion-router-outlet></ion-router-outlet>  -->
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="device-setup">
+    
+    <ion-tab-button tab="rooms" (click)="tabClick()">
       <ion-icon name="home-outline"></ion-icon>
     </ion-tab-button>
 
@@ -11,7 +12,7 @@
       <ion-icon name="speedometer-outline"></ion-icon>
     </ion-tab-button>
 
-    <ion-tab-button tab="device-setting">
+    <ion-tab-button tab="devices">
       <ion-icon name="settings-outline"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>

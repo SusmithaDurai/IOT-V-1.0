@@ -17,10 +17,10 @@ export class DeviceSetUpPage implements OnInit {
   
   ngOnInit() {
 
-    this.iotService.listAllDevices().subscribe(data=>{
-      const {devices}=data;
-    this.devices=devices;
-    })
+    // this.iotService.listAllDevices().subscribe(data=>{
+    //   const {devices}=data;
+    // this.devices=devices;
+    // })
   }
 
  
