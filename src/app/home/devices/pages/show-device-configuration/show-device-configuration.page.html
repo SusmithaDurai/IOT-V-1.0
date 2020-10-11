@@ -1,8 +1,23 @@
-<app-headerpanel title="Configure Device"></app-headerpanel>
+<!-- <app-headerpanel title="Configure Device"></app-headerpanel> -->
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+  
+    <ion-avatar style="padding:5px 5px 5px 5px;" slot="end" >
+      <img src="assets/icon/person.jpeg">
+      
+    </ion-avatar>
+  
+    <ion-title  text-center>Configure Device</ion-title>
+   
+  </ion-toolbar>
+  </ion-header>
 
 <ion-content fullscreen>
   <div style="height:40%;">
-    <img src="assets/icon/devices/smartLight.jpg" style="height:100%;width:100%;">
+    <img [class] ='addClasses()' style="height:100%;width:100%;">
   </div>
 
   <div>
@@ -12,7 +27,7 @@
         <ion-item>
           <ion-label>Device Type</ion-label>
           <ion-select (ionChange)='selectedValue($event)' [value]="currentDevice" formControlName="deviceType">
-            <ion-select-option *ngFor="let device of devices" value={{device}}>
+            <ion-select-option *ngFor="let device of deviceTypes" value={{device}}>
               {{device}}
             </ion-select-option>
           </ion-select>

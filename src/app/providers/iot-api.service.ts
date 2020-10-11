@@ -4,8 +4,8 @@ import { switchInfo } from './switch-info';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { roomData } from '../home/rooms/models/roomData';
-import { deviceData } from '../home/rooms/models/deviceData';
+import { RoomData } from '../home/rooms/models/room-data';
+import { DeviceData } from '../home/devices/models/device-data';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,8 @@ export class IotApiService {
 
   private saveRoomDetail="http://192.168.1.10/configure/device"
 
-  devicesList : deviceData[];
-  listOfRoomsData : roomData[];
+  devicesList : DeviceData[];
+  listOfRoomsData : RoomData[];
 
   constructor(private http:HttpClient) { }
 
@@ -30,7 +30,7 @@ export class IotApiService {
     return this.http.get(this._url);
   }
 
-  setListOfDevicesInRoom(listOfDevicesInRoom:deviceData[]){
+  setListOfDevicesInRoom(listOfDevicesInRoom:DeviceData[]){
     this.devicesList=listOfDevicesInRoom;
   }
 
@@ -46,7 +46,7 @@ export class IotApiService {
     return this.devicesList;
   }
 
-  setListOfRoomsData(data : roomData[]) {
+  setListOfRoomsData(data : RoomData[]) {
     this.listOfRoomsData=data;
   }
 

@@ -13,11 +13,12 @@ import { CookieService } from 'ngx-cookie-service';
 export class HomePage implements OnInit {
 @Input() headerTitle : string;
   userinfo :userInfo;
-  constructor(private router:ActivatedRoute,private cogservice : CognitoService,private http:HttpClientModule,private cookie:CookieService) {
-   
+  constructor(private router:Router) {
+    
   }
 
   ngOnInit() {
+    this.router.navigateByUrl("/home/rooms");
    /* this.router.fragment.subscribe((params)=>{
       const fragments=params.split('&');
       const paramsMap={};

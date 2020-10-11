@@ -22,15 +22,15 @@ export class HeaderPanelComponent implements OnInit {
   returnUrl: any;
  
   constructor(private router:Router,private routeUrl:ActivatedRoute,private iotRouteService:RoutingURLService) {
-    this.currentUrl = this.router.url;
-    router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {        
-        this.previousUrl = this.currentUrl;
-        this.currentUrl = event.url;
-        console.log("Previous URL ",this.previousUrl);
-        console.log("Current URL ",this.currentUrl);
-      };
-    });
+    // this.currentUrl = this.router.url;
+    // router.events.subscribe(event => {
+    //   if (event instanceof NavigationEnd) {        
+    //     this.previousUrl = this.currentUrl;
+    //     this.currentUrl = event.url;
+    //     console.log("Previous URL ",this.previousUrl);
+    //     console.log("Current URL ",this.currentUrl);
+    //   };
+    // });
 
   
     // console.log("State URL ",this.state.url);

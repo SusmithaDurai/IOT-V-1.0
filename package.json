@@ -30,6 +30,7 @@
     "cordova-sqlite-storage": "^5.0.1",
     "ionic-angular": "^3.9.10",
     "ngx-cookie-service": "^3.0.4",
+    "ngx-socket-io": "^3.2.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

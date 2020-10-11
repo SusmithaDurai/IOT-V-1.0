@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { deviceData } from '../../models/deviceData';
+import { DeviceData } from '../../../devices/models/device-data';
+import { DeviceStatus } from 'src/app/home/devices/models/device-status';
 
 @Component({
   selector: 'app-create-new-device',
@@ -8,7 +9,11 @@ import { deviceData } from '../../models/deviceData';
 })
 export class CreateNewDeviceComponent implements OnInit {
   @Input()
-  listOfdevices:deviceData[];
+  listOfdevices:DeviceData[];
+
+  @Input()
+  deviceStatus:DeviceStatus;
+
   mapImageToType=new Map();
   
   @Output() updatedevice=new EventEmitter();
@@ -18,19 +23,21 @@ export class CreateNewDeviceComponent implements OnInit {
 
     this.mapImageToType.set('Fan0','fanRed');
     this.mapImageToType.set('Air Conditioner0','airConditionerRed');
-    this.mapImageToType.set('Light0','lightRed');
+    this.mapImageToType.set('Bulb0','lightRed');
 
     this.mapImageToType.set('Fan1','fanGreen');
     this.mapImageToType.set('Air Conditioner1','airConditionerGreen');
-    this.mapImageToType.set('Light1','lightGreen');
+    this.mapImageToType.set('Bulb1','lightGreen');
 
     this.mapImageToType.set('Fan2','fanGrey');
     this.mapImageToType.set('Air Conditioner2','airConditionerGrey');
-    this.mapImageToType.set('Light2','lightGrey');
+    this.mapImageToType.set('Bulb2','lightGrey');
 
     //mapImageToType.set('Bath room','bath_room');
     //mapImageToType.set('Portico','portico');
-    this.mapImageToType.set('Custom','default');
+    this.mapImageToType.set('Others2','default');
+    
+    
   }
 
   managedeviceDetails(device) {
@@ -39,8 +46,8 @@ export class CreateNewDeviceComponent implements OnInit {
 
   addClasses(deviceType) {
     let status=2;
-   // console.log("Input for the function ",deviceType+"-"+status);
-   // console.log("Inside getClasses ",this.mapImageToType.get(deviceType+status));
+   //console.log("Input for the function ",deviceType+"-"+status);
+   console.log("Inside getClasses ",this.mapImageToType.get(deviceType+status));
     return this.mapImageToType.get(deviceType+status);
   }
 

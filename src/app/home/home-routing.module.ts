@@ -1,7 +1,4 @@
-import { DeviceSetUpPage } from './../device-setup/device-setup.page';
-import { DashboardPage } from './../dashboard/dashboard.page';
-import { DeviceConfigPage } from './../device-config/device-config.page';
-import { DeviceSettingPage } from '../device-setting/device-setting.page';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,8 +9,8 @@ import { DiscoverRoomsPage } from './rooms/pages/discover-rooms/discover-rooms.p
 const routes: Routes = [
 
   {
-    path:'/home',
-    component:HomePage,
+    path:'',
+   component:HomePage,
     children:[
       {
         path :'rooms',
@@ -21,83 +18,37 @@ const routes: Routes = [
       },
       {
         path: 'devices',
-        //component:DiscoverDevicesOnRoomsPage
         loadChildren: () => import('./rooms/pages/discover-devices-on-rooms/discover-devices-on-rooms.module').then( m => m.DiscoverDevicesOnRoomsPageModule)
     
       },
       {
-        path:'dashboard',
-        component:DashboardPage
-        //loadChildren:()=>import('/')
+        path: 'devices/:id',
+        loadChildren: () => import('./rooms/pages/discover-devices-on-rooms/discover-devices-on-rooms.module').then( m => m.DiscoverDevicesOnRoomsPageModule)
+    
+      },
+      {
+        path:'status',
+        loadChildren:()=>import('./monitoring/pages/status-monitoring/status-monitoring.module').then(m=>m.StatusMonitoringPageModule)
       }
     ]
   },
 
   {
     path:'',   
-    redirectTo: '/home/rooms',
+    redirectTo: '/rooms',
      pathMatch: 'full'
     
-    //loadChildren: () => import('./rooms/rooms.module').then( m => m.RoomsPageModule)
 
+  },
+  {
+    path: 'status-monitoring',
+    loadChildren: () => import('./monitoring/pages/status-monitoring/status-monitoring.module').then( m => m.StatusMonitoringPageModule)
+  },
+  {
+    path: 'device-monitoring',
+    loadChildren: () => import('./monitoring/pages/device-monitoring/device-monitoring.module').then( m => m.DeviceMonitoringPageModule)
   }
-  // {
-  //   path: 'rooms',
-  //   //component:DiscoverRoomsPage,
-  //   loadChildren: () => import('./rooms/rooms.module').then( m => m.RoomsPageModule)
-  // },
-  // {
-  //   path: 'room',
-  //   //component:DiscoverDevicesOnRoomsPage
-  //   loadChildren: () => import('./rooms/pages/discover-devices-on-rooms/discover-devices-on-rooms.module').then( m => m.DiscoverDevicesOnRoomsPageModule)
-
-  // },
-
-  // {
-  //   path: 'devices',
-  //   loadChildren: () => import('./devices/devices.module').then( m => m.DevicesPageModule)
-  // }
   
- 
-  // {
-  //   path: '',
-  //   redirectTo: '/home/rooms',
-  //   pathMatch: 'full'
-  // }
-  // ,
-  // {
-  //   path:'device-setting',
-  //   //component:DeviceConfigPage,
-  //   children: [
-  //     {
-  //       path: '',
-  //       loadChildren: () => import('../device-setting/device-setting.module').then(m => m.DeviceSettingPageModule),
-  //     }
-  //   ]
-
-  // },
-  // {
-  //   path:'dashboard',
-  //   component:DashboardPage,
-  //   children: [
-  //     {
-  //       path: '',
-  //       loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),
-  //     }
-  //   ]
-
-  // },
-  // {
-  //   path:'device-setup',
-  //   component:DeviceSetUpPage,
-  //   children: [
-  //     {
-  //       path: '',
-  //       loadChildren: () => import('../device-setup/device-setup.module').then(m => m.DeviceSetUpPageModule),
-  //     }
-  //   ]
-
-  // },
 ];
   
 

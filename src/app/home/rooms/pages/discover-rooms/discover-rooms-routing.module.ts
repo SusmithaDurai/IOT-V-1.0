@@ -7,6 +7,23 @@ const routes: Routes = [
   {
     path: '',
     component: DiscoverRoomsPage
+    // [
+    //   {
+    //     path:'show-room-configuration',
+    //     loadChildren: () => import('../show-room-configuration/show-room-configuration.module').then( m => m.ShowRoomConfigurationPageModule)
+
+    //   }
+    // ]
+  },
+  {
+    path:'show-room-configuration',
+     loadChildren: () => import('../show-room-configuration/show-room-configuration.module').then( m => m.ShowRoomConfigurationPageModule)
+
+  },
+  {
+    path:'device-monitoring',
+   loadChildren: () => import('../../../monitoring/pages/device-monitoring/device-monitoring.module').then( m => m.DeviceMonitoringPageModule)
+
   }
   // ,
   // {

@@ -32,3 +32,11 @@ Storage service flow
 Back Button
 Interfaces
 Can we add RoomData with deviceData (Interface) - Link to room and devices (show roomDetails.ts)
+
+
+Shan
+--------
+Check getRoom updates from RoomsModal.
+Work on device and Room Types.
+Error Handling
+Condotion check and error handling in logic

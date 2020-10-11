@@ -1,6 +1,6 @@
 import { IotApiService } from 'src/app/providers/iot-api.service';
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-import { roomData } from '../../models/roomData';
+import { RoomData } from '../../models/room-data';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,15 +11,16 @@ import { Router } from '@angular/router';
 export class CreateNewRoomComponent implements OnInit {
 
 @Input()
-listOfRooms:roomData[];
+listOfRooms:RoomData[];
  mapImageToType=new Map();
 
-
+ @Output() deviceStatus=new EventEmitter();
 @Output() updateRooms=new EventEmitter();
   constructor(private iotService:IotApiService,private router:Router) { 
 
     
     this.mapImageToType.set('Living room','livingRoom');
+    this.mapImageToType.set('Kitchen','livingRoom');
     this.mapImageToType.set('Bed room','bedRoom');
     this.mapImageToType.set('Hall','hallRoom');
     this.mapImageToType.set('Custom','default');
@@ -34,7 +35,12 @@ listOfRooms:roomData[];
     this.updateRooms.emit(device_id);
   }
 
+  showDeviceStatus(room){
+    this.deviceStatus.emit(room);
+  }
+
   addClasses(roomType) {
+    
    // console.log("Inside getClasses ",this.mapImageToType.get(roomType));
     return this.mapImageToType.get(roomType);
   }

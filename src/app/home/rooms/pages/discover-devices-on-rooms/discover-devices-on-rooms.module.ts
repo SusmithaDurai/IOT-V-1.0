@@ -9,6 +9,7 @@ import { DiscoverDevicesOnRoomsPageRoutingModule } from './discover-devices-on-r
 import { DiscoverDevicesOnRoomsPage } from './discover-devices-on-rooms.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { RoomComponentsModule } from '../../room-components/room-components.module';
+import { ShowDeviceConfigurationPageRoutingModule } from 'src/app/home/devices/pages/show-device-configuration/show-device-configuration-routing.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { RoomComponentsModule } from '../../room-components/room-components.modu
     IonicModule,
     DiscoverDevicesOnRoomsPageRoutingModule,
     ComponentsModule,
-    RoomComponentsModule
+    ShowDeviceConfigurationPageRoutingModule,
+    RoomComponentsModule, 
 
   ],
   declarations: [DiscoverDevicesOnRoomsPage]

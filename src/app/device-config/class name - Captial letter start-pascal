@@ -1,3 +1,0 @@
-class name - Captial letter start-pascal case  Ex:UserLoginCount
-Variable,Method->camel case userLoginCount
-folderName/filename ->Kebab case with dash(-)

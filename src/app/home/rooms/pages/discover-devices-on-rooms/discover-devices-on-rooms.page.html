@@ -12,7 +12,14 @@
 
   <ion-grid *ngIf="showDevices">
   
-
+<ion-row>
+  <ion-col>
+    <ion-item  style="border: 0px solid rgb(246, 248, 248);border-radius: 25px;">
+      <ion-label style="width:80%;">Room </ion-label>
+      <ion-input placeholder="Room Name" [(ngModel)]="roomName" (ionFocus)="previousRoomName()" (ionBlur)="currentRoomName()"></ion-input>
+    </ion-item>
+  </ion-col>
+</ion-row>
       <app-create-new-device [listOfdevices]='listOfDevices' (updatedevice)='showDeviceConfiguration($event)'></app-create-new-device>
     
   </ion-grid> 

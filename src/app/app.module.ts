@@ -1,6 +1,6 @@
 import { RoutingURLService } from './providers/routing-url.service';
 import { WelcomeComponent } from './auth/welcome/welcome.component';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
@@ -21,8 +21,12 @@ import {CookieService} from 'ngx-cookie-service';
 import { DatePipe } from '@angular/common';
 import {Storage,IonicStorageModule} from '@ionic/storage';
 import { StorageService } from './providers/storage.service';
+import { IotErrorHandlerService } from './providers/messages/iot-error-handler.service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 Amplify.configure(awsconfig);
+
+const iotConfig: SocketIoConfig = { url: 'http://3.137.85.184:80/', options: {} };
 
 @NgModule({
   declarations: [AppComponent,WelcomeComponent],
@@ -31,6 +35,7 @@ Amplify.configure(awsconfig);
             AmplifyUIAngularModule,
             BrowserModule, 
             IonicModule.forRoot(), 
+            SocketIoModule.forRoot(iotConfig),
             AppRoutingModule,
             HttpClientModule,
             IonicStorageModule.forRoot()],
@@ -42,7 +47,8 @@ Amplify.configure(awsconfig);
     CookieService,
     StorageService,
     RoutingURLService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: ErrorHandler, useClass: IotErrorHandlerService}
   ],
   exports:[AppRoutingModule],
   bootstrap: [AppComponent]

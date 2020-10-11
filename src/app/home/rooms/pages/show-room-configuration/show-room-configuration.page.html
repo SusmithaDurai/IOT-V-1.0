@@ -1,9 +1,18 @@
-<app-headerpanel title="Configure Room" show="true"></app-headerpanel>
-<!-- <ion-header>
-  <page-header icon="map" title="Map page">
-    <ion-button></ion-button>
-  </page-header>
-</ion-header> -->
+<!-- <<app-headerpanel title="Configure Room" show="true"></app-headerpanel> -->
+<ion-header>
+<ion-toolbar color="secondary" >
+  <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+
+  <ion-avatar style="padding:5px 5px 5px 5px;" slot="end" >
+    <img src="assets/icon/person.jpeg">
+  </ion-avatar>
+
+  <ion-title  text-center>Configure Room</ion-title>
+ 
+</ion-toolbar>
+</ion-header>
 
 <ion-content fullscreen>
   <div style="height:60%;">
@@ -17,7 +26,7 @@
         <ion-item>
           <ion-label>Room Type</ion-label>
           <ion-select (ionChange)='selectedValue($event)' [value]="currentRoom" formControlName="roomType">
-            <ion-select-option *ngFor="let room of rooms" value={{room}}>
+            <ion-select-option *ngFor="let room of roomTypes" value={{room}}>
               {{room}}
               
             </ion-select-option>

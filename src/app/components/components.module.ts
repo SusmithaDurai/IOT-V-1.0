@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderPanelComponent } from './header-panel/header-panel.component';
 import { DeviceBlockPanelComponent } from './device-block-panel/device-block-panel.component';
+import { DefaultErrorPageComponent } from './default-error-page/default-error-page.component';
 
 
 
 @NgModule({
-  declarations: [AddDeviceBtnComponent,BarcodeScannerComponent,HeaderPanelComponent,DeviceBlockPanelComponent],
-  exports : [AddDeviceBtnComponent,BarcodeScannerComponent,HeaderPanelComponent,DeviceBlockPanelComponent],
+  declarations: [AddDeviceBtnComponent,BarcodeScannerComponent,HeaderPanelComponent,DeviceBlockPanelComponent,DefaultErrorPageComponent],
+  exports : [AddDeviceBtnComponent,BarcodeScannerComponent,HeaderPanelComponent,DeviceBlockPanelComponent,DefaultErrorPageComponent],
   imports: [
     CommonModule,
     

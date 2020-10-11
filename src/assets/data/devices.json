@@ -1,14 +1,8 @@
 {
-    "device_id" : "MBNASDFH82634",
+    "device_id" : "BB2089F4021C",
     "device_type": "REL41",
-    "num_relays" : 4,   
+    "num_relays" : 2,   
     "room_type" : "Bed room",
     "room_name" : "Grandma's bed room",
-    "device_config" : 
-     [
-          {"name" : "Bed room A/C",     "type": "Light",    "schedule" : [18,0,6,30]},
-          {"name" : "Bath room light",  "type": "Light",  "schedule" : [18,30,4,0]},
-          {"name" : "Bed room fan",     "type": "Fan",    "schedule" : [18,15,18,30]},
-          {"name" : "Balcony light",    "type": "Light",  "schedule" : []}
-     ]
+    "device_config" : []
  }
