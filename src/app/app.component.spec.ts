@@ -1,5 +1,6 @@
+import { HomePage } from './home/home.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -8,6 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  let comp:HomePage;
+  let fixture:ComponentFixture<HomePage>;
 
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
 
@@ -25,7 +29,10 @@ describe('AppComponent', () => {
         { provide: SplashScreen, useValue: splashScreenSpy },
         { provide: Platform, useValue: platformSpy },
       ],
-    }).compileComponents();
+    }).compileComponents().then(()=>{
+       fixture=TestBed.createComponent(HomePage);
+      comp=fixture.componentInstance;
+    });
   }));
 
   it('should create the app', () => {
@@ -40,6 +47,10 @@ describe('AppComponent', () => {
     await platformReadySpy;
     expect(statusBarSpy.styleDefault).toHaveBeenCalled();
     expect(splashScreenSpy.hide).toHaveBeenCalled();
+  });
+
+  it('check UserInfo has values',()=>{
+    expect(comp.headerTitle.length).toBeGreaterThan(2);
   });
 
   // TODO: add more tests!

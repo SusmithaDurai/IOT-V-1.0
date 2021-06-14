@@ -1,0 +1,20 @@
+
+
+<ion-content fullscreen="true">
+  <ion-grid >
+    <ion-row >
+      <ion-col size="6" *ngFor="let room of listOfRooms;let i=index ">
+        
+        <ion-card>
+          <ion-card-header>
+            <span>{{room.room_name||room.device_id}} </span> <ion-icon name="create-outline" (click)='manageRoomDetails(room)'></ion-icon></ion-card-header>
+            <!-- <span>{{room.room_name||room.device_id}} </span> </ion-card-header> -->
+
+            <img [class] ="addClasses(room.room_type || 'Custom')"  (click)="showDeviceStatus(room)">
+        <ion-card-title>{{room.num_relays}} devices</ion-card-title>
+        
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

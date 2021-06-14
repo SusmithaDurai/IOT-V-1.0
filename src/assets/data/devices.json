@@ -1,0 +1,8 @@
+{
+    "device_id" : "BB2089F4021C",
+    "device_type": "REL41",
+    "num_relays" : 2,   
+    "room_type" : "Bed room",
+    "room_name" : "Grandma's bed room",
+    "device_config" : []
+ }

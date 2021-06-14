@@ -1,0 +1,27 @@
+<app-headerpanel title="Rooms"></app-headerpanel>
+
+
+
+<ion-content>
+
+  <ion-segment scrollable (ionChange)="selectedRoom($event)" [(ngModel)]="deviceId">
+    <ion-segment-button *ngFor="let items of listOfRooms"  value="{{items.device_id}}">
+      <ion-label>{{items.room_name|| items.device_id}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid *ngIf="showDevices">
+  
+<ion-row>
+  <ion-col>
+    <ion-item  style="border: 0px solid rgb(246, 248, 248);border-radius: 25px;">
+      <ion-label style="width:80%;">Room </ion-label>
+      <ion-input placeholder="Room Name" [(ngModel)]="roomName" (ionFocus)="previousRoomName()" (ionBlur)="currentRoomName()"></ion-input>
+    </ion-item>
+  </ion-col>
+</ion-row>
+      <app-create-new-device [listOfdevices]='listOfDevices' (updatedevice)='showDeviceConfiguration($event)'></app-create-new-device>
+    
+  </ion-grid> 
+  </ion-content>
+

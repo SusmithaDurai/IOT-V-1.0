@@ -1,0 +1,27 @@
+<app-headerpanel title="Welcome Home"></app-headerpanel>
+
+<ion-content fullscreen="true">
+  <!-- <ion-toolbar color="secondary" >
+
+    <ion-buttons slot="start" style="padding: 5px 0px 0px 15px">
+      <ion-button>
+        <ion-label>Room</ion-label>
+        
+      </ion-button>
+      <ion-button disabled>
+        <ion-label>Device</ion-label>
+        
+      </ion-button>
+    </ion-buttons> -->
+
+    <!-- <ion-segment (ionChange)="segmentChanged($event)" >
+      <ion-segment-button value="camera">
+        <ion-label>Room</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark">
+        <ion-label>Devices</ion-label>
+      </ion-segment-button>
+    </ion-segment> -->
+  <!-- </ion-toolbar> -->
+ <app-create-new-room [listOfRooms]='listOfRooms' (deviceStatus)='showDeviceStatus($event)' (updateRooms)='navigatePage($event)'></app-create-new-room>
+</ion-content>

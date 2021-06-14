@@ -1,56 +1,56 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { DiscoverDevicesOnRoomsPage } from './rooms/pages/discover-devices-on-rooms/discover-devices-on-rooms.page';
+import { DiscoverRoomsPage } from './rooms/pages/discover-rooms/discover-rooms.page';
 
 const routes: Routes = [
+
   {
-    path: 'home',
-    component: HomePage,
-    children : [
+    path:'',
+   component:HomePage,
+    children:[
       {
-        path: 'devicesetup',
-        loadChildren: () => import('../devicesetup/devicesetup.module').then(m => m.DevicesetupPageModule)
+        path :'rooms',
+        loadChildren: () => import('./rooms/pages/discover-rooms/discover-rooms.module').then( m => m.DiscoverRoomsPageModule)
       },
       {
-        path: 'deviceperformance',
-        loadChildren: () => import('../deviceperformance/deviceperformance.module').then(m => m.DeviceperformancePageModule)
+        path: 'devices',
+        loadChildren: () => import('./rooms/pages/discover-devices-on-rooms/discover-devices-on-rooms.module').then( m => m.DiscoverDevicesOnRoomsPageModule)
+    
       },
       {
-        path: 'devicesetting',
-        loadChildren: () => import('../devicesetting/devicesetting.module').then(m => m.DevicesettingPageModule)
+        path: 'devices/:id',
+        loadChildren: () => import('./rooms/pages/discover-devices-on-rooms/discover-devices-on-rooms.module').then( m => m.DiscoverDevicesOnRoomsPageModule)
+    
       },
       {
-        path: 'device-config',
-        loadChildren: () => import('../device-config/device-config.module').then( m => m.DeviceConfigPageModule)
-      },
-      {
-        path: 'switchsetup',
-        loadChildren: () => import('../switchsetup/switchsetup.module').then( m => m.SwitchsetupPageModule)
-      },
-      {
-        path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then( m => m.DashboardPageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/home/devicesetup',
-        pathMatch: 'full'
+        path:'status',
+        loadChildren:()=>import('./monitoring/pages/status-monitoring/status-monitoring.module').then(m=>m.StatusMonitoringPageModule)
       }
-      // ,
-      // {
-      //   path: '',
-      //   redirectTo: '',
-      //   pathMatch: 'full'
-      // }
     ]
   },
+
   {
-    path: '',
-    redirectTo: '/home/devicesetup',
-    pathMatch: 'full'
+    path:'',   
+    redirectTo: '/rooms',
+     pathMatch: 'full'
+    
+
+  },
+  {
+    path: 'status-monitoring',
+    loadChildren: () => import('./monitoring/pages/status-monitoring/status-monitoring.module').then( m => m.StatusMonitoringPageModule)
+  },
+  {
+    path: 'device-monitoring',
+    loadChildren: () => import('./monitoring/pages/device-monitoring/device-monitoring.module').then( m => m.DeviceMonitoringPageModule)
   }
+  
 ];
+  
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,0 +1,48 @@
+<!-- <<app-headerpanel title="Configure Room" show="true"></app-headerpanel> -->
+<ion-header>
+<ion-toolbar color="secondary" >
+  <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+
+  <ion-avatar style="padding:5px 5px 5px 5px;" slot="end" >
+    <img src="assets/icon/person.jpeg">
+  </ion-avatar>
+
+  <ion-title  text-center>Configure Room</ion-title>
+ 
+</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div style="height:60%;">
+    <img [class] ='addClasses()' style="height:100%;width:100%;">
+  </div>
+
+  <div>
+    <form class="container" [formGroup]="updateRoomDetailForm" (ngSubmit)="updateRoomDetails()" novalidate>
+      <ion-list lines="none" style="border: 0px solid rgb(246, 248, 248);border-radius: 20px;">
+
+        <ion-item>
+          <ion-label>Room Type</ion-label>
+          <ion-select (ionChange)='selectedValue($event)' [value]="currentRoom" formControlName="roomType">
+            <ion-select-option *ngFor="let room of roomTypes" value={{room}}>
+              {{room}}
+              
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Room Name" formControlName="roomName"></ion-input>
+
+        </ion-item>
+        <ion-item>
+          <span style="float:right">
+        <ion-button  type="submit" Fill="outline" size="small">Save</ion-button>
+      </span>
+      </ion-item>
+      </ion-list>
+
+    </form>
+  </div>
+</ion-content>

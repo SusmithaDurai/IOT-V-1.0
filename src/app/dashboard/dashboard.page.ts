@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  headertitle: string = 'Dashboard';
+  headertitle: string = 'Dashboard'; // FIXME:: camelcases
   constructor() { }
 
   ngOnInit() {

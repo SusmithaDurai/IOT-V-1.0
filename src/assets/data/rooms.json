@@ -1,0 +1,38 @@
+{
+    "new_devices" : [
+        {
+                "device_id" : "BB2089F4021C",
+                "hardware_type": "REL4.1",
+                "num_relays" : 4,   
+                "room_type" : "",
+                "room_name" : "",
+                "device_config":[]
+        },
+           
+        { "device_id" : "90ASDBASDF94D",
+                "hardware_type": "REL2.1",
+                "num_relays" : 2,   
+                "room_type" : "",
+                "room_name" : "",
+                "device_config":[]
+            },
+               
+            { "device_id" : "AB89ASDFKDF33",
+                "hardware_type": "REL4.1",
+                "num_relays" : 4,   
+                "room_type" : "Living room",
+                "room_name" : "Living Room",
+                "device_config":[]
+            },
+               
+            { 
+                "device_id" : "BCD8700X8D43B",
+                "hardware_type": "REL0",
+                "num_relays" : 0,   
+                "room_type" : "Hall",
+                "room_name" : "Hall",
+                "device_config":[]
+            }
+            
+       ]
+}

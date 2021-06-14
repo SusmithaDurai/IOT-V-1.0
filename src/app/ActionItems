@@ -1,0 +1,42 @@
+Error Handling
+form validation
+close observable
+check names and print statements
+logging
+Promise async and await call
+Bring all rest get call into storage service
+Images for default and room and devices
+Back button
+Wrong URL Mapping
+
+DEVICENAME Unique ID condition check in show device configuration
+
+
+Save instead configure in rooms
+
+Check Home routing page once
+
+Status Image red or Green
+Status value in device JSON
+
+
+Mapping device/room Images to Javascript Map -- Either in local or server database
+
+
+Check With Shan
+-----------------
+Routing 
+Observable close
+Discover Devices Room Page Emit concept
+Storage service flow
+Back Button
+Interfaces
+Can we add RoomData with deviceData (Interface) - Link to room and devices (show roomDetails.ts)
+
+
+Shan
+--------
+Check getRoom updates from RoomsModal.
+Work on device and Room Types.
+Error Handling
+Condotion check and error handling in logic
